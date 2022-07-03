@@ -1,0 +1,27 @@
+.siteWidth{
+    display: flex;
+    border: 2px solid red;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 6rem;
+    border: 2px solid green;
+    width: 100%;
+    max-width: 1250px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin: 0 0.1rem;
+      
+    }
+}
+ 
