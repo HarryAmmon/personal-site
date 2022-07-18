@@ -1,9 +1,9 @@
+@import "../styles/variables.scss";
+
 .siteWidth{
     display: flex;
     border: 2px solid red;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
@@ -15,7 +15,7 @@
     margin: 0 6rem;
     border: 2px solid green;
     width: 100%;
-    max-width: 1250px;
+    max-width: $max-page-width;
 }
 
 @media only screen and (max-width: 600px) {

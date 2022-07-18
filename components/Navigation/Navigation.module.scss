@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: max-site-width;
+
+    li{
+        list-style: none;
+    }
+}

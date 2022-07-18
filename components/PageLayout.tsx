@@ -18,16 +18,3 @@ export const SiteHeader = () => (
     <link rel="icon" href="/favicon.ico" />
   </Head>
 );
-
-export const Navigation = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/Page1">Page 1</Link>
-      </li>
-    </ul>
-  </nav>
-);
