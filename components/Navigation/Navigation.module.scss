@@ -1,12 +1,24 @@
 @import "../../styles/variables.scss";
 
-.nav{
+.navBar{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: aqua;
+    .navContent{
+        border: 2px solid red;
+        max-width: $max-page-width;
+        display: flex;
+        justify-content: space-between;
+        // width: max-site-width;
+        width: 1250px
+    }
+}
+
+.navPane{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    max-width: max-site-width;
-
-    li{
-        list-style: none;
-    }
+    li {
+            list-style: none;
+        }
 }
