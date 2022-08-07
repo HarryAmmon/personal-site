@@ -1,4 +1,4 @@
-.button{
+.button {
     border: 0.1rem solid #000;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
@@ -7,10 +7,69 @@
     color: #000;
     text-transform: uppercase;
 }
+
 .anchor{
-    border: 2px solid yellow;
+   
 }
+
 .primaryButton{
     background-color: #000;
     color: #FFF
+}
+
+.burgerButtonContainer{
+    display: none; 
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 700px) {
+        display: flex;
+    }
+}
+
+.checkbox{
+    position: absolute;
+        top: -9999px;
+        left: -9999px;  
+}
+.checkbox:focus + .burgerButtonContainer{
+    border: 2px solid red;
+}
+
+.checkbox:checked + .burgerButton{
+    visibility: hidden;
+    &:before{
+        background-color: red;
+        transform: rotate(45deg) translate(40%, 25%);
+        visibility: visible;
+    }
+    &:after {
+        background-color: blue;
+        visibility: visible;
+        transform: rotate(-45deg) translate(35%, 25%);
+    }
+}
+
+.burgerButton {
+    display: block;
+    position: absolute;
+    background-color: whitesmoke;
+    width: 30px;
+    height: 4px;
+    border-radius: 4px;
+    content: ' ';
+
+    &:before{
+        @extend .burgerButton;
+        content: ' ';
+        margin-top: -8px;
+    }   
+    &:after{
+        @extend .burgerButton;
+        content: ' ';
+        margin-top: 8px;
+    }
 }

@@ -1,21 +1,40 @@
-import React from "react";
-import { Anchor } from "../Buttons";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { Anchor, Burger, Cross } from "../Buttons";
 import styles from "./Navigation.module.scss";
 
-export const NavigationPane = (): JSX.Element => {
+interface IBurgerButtonProps {
+  checked: boolean;
+  setChecked: Dispatch<SetStateAction<boolean>>;
+}
+
+interface INavigationPaneProps {
+  checked: boolean;
+}
+
+export const NavigationPane = ({
+  checked,
+}: INavigationPaneProps): JSX.Element => {
+  // const checked = true;
   return (
-    <ul className={styles.navPane}>
-      <li>
-        <Anchor styleAs="a" href="#projects">
-          Projects
-        </Anchor>
-      </li>
-      <li>
-        <Anchor styleAs="a" href="#career">
-          Career
-        </Anchor>
-      </li>
-    </ul>
+    <div className={`${styles.navPane} ${checked ? styles.a : styles.b}`}>
+      <ul>
+        <li>
+          <Anchor styleAs="a" href="#projects">
+            Projects
+          </Anchor>
+        </li>
+        <li>
+          <Anchor styleAs="a" href="#career">
+            Career
+          </Anchor>
+        </li>
+        <li>
+          <Anchor styleAs="a" href="#aboutme">
+            About Me
+          </Anchor>
+        </li>
+      </ul>
+    </div>
   );
 };
 
@@ -26,9 +45,36 @@ export interface INavigationBarProps {
 export const NavigationBar = ({
   children,
 }: INavigationBarProps): JSX.Element => {
+  const [checked, setChecked] = useState(false);
   return (
     <nav className={styles.navBar}>
-      <div className={styles.navContent}>{children}</div>
+      <BurgerButtonWithCross checked={checked} setChecked={setChecked} />
+      <NavigationPane checked={checked} />
+      {children}
     </nav>
+  );
+};
+
+export const BurgerButtonWithCross = ({
+  checked,
+  setChecked,
+}: IBurgerButtonProps) => {
+  return <BurgerButton checked={checked} setChecked={setChecked} />;
+};
+
+const BurgerButton = ({ checked, setChecked }: IBurgerButtonProps) => {
+  return (
+    <div>
+      <label htmlFor="burgerButton" className={styles.burgerButtonContainer}>
+        <input
+          type="checkbox"
+          id="burgerButton"
+          className={styles.checkbox}
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        />
+        {checked ? <Cross /> : <Burger />}
+      </label>
+    </div>
   );
 };
