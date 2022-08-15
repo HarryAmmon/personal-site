@@ -16,7 +16,7 @@ export const Layout = ({ children }: ILayoutProps) => {
       <SiteHeader />
       <NavigationBar>
         <Anchor
-          href="/#"
+          href="/files/CV.pdf"
           styleAs="button"
           target="_blank"
           className={styles.hireMe}
