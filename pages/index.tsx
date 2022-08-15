@@ -11,9 +11,6 @@ export default function Home() {
           I'm a software developer at The Pensions Regulator, currently building
           tools for the web whilst promoting DevOps and Agile values.
         </P>
-        <Anchor href="/#" styleAs="button" target="_blank">
-          Hire me
-        </Anchor>
       </header>
 
       {/* Name, Nav bar to navigate to sections on the same page */}

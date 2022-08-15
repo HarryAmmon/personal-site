@@ -14,10 +14,9 @@ interface IAnchorProps {
   primary?: boolean;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   target?: HTMLAttributeAnchorTarget;
+  className?: string;
   children: ReactNode;
 }
-
-
 
 export const Anchor = ({
   children,
@@ -25,13 +24,14 @@ export const Anchor = ({
   onClick,
   href,
   target,
+  className,
   primary = false,
 }: IAnchorProps): JSX.Element => {
   return (
     <a
       className={`${primary && styles.primaryButton} ${
         styleAs === "button" ? styles.button : styles.anchor
-      }`}
+      } ${className && className}`}
       onClick={onClick}
       href={href}
       target={target}
@@ -41,9 +41,6 @@ export const Anchor = ({
   );
 };
 
-
-
-//TODO find cross with rounded corners
 export const Cross = () => {
   return (
     <svg
@@ -53,7 +50,7 @@ export const Cross = () => {
       width="50px"
       height="50px"
     >
-      <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z" />
+      <path d="M 40.783203 7.2714844 A 2.0002 2.0002 0 0 0 39.386719 7.8867188 L 25.050781 22.222656 L 10.714844 7.8867188 A 2.0002 2.0002 0 0 0 9.2792969 7.2792969 A 2.0002 2.0002 0 0 0 7.8867188 10.714844 L 22.222656 25.050781 L 7.8867188 39.386719 A 2.0002 2.0002 0 1 0 10.714844 42.214844 L 25.050781 27.878906 L 39.386719 42.214844 A 2.0002 2.0002 0 1 0 42.214844 39.386719 L 27.878906 25.050781 L 42.214844 10.714844 A 2.0002 2.0002 0 0 0 40.783203 7.2714844 z" />
     </svg>
   );
 };

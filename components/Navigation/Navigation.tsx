@@ -14,9 +14,8 @@ interface INavigationPaneProps {
 export const NavigationPane = ({
   checked,
 }: INavigationPaneProps): JSX.Element => {
-  // const checked = true;
   return (
-    <div className={`${styles.navPane} ${checked ? styles.a : styles.b}`}>
+    <div className={`${styles.navPane} ${checked && styles.show}`}>
       <ul>
         <li>
           <Anchor styleAs="a" href="#projects">

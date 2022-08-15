@@ -1,10 +1,13 @@
 @import "../../styles/variables.scss";
 
 .navBar{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: relative;
-    height: 64px;
+    max-height: 5rem;
     background-color: aqua;
+    padding: 1rem;
     .navContent{
         max-width: $max-page-width;
         display: flex;
@@ -12,25 +15,23 @@
         width:100%;
         padding: 0.5rem;
     }
+
 }
 
-// .navPane{
-//     display: flex;
-//     li {
-//             list-style: none;
-//         }
-//     ul{
-//         display: flex;
-//     }
-//     @media screen and (max-width: 700px){
-//         ul{
-//             // flex-direction: column;
-//         }
-//     }
-    
-// }
+.navPane{
+    ul{
+        display: flex;
+        padding-left: 0;
+        li{
+            list-style: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
 
 .burgerButtonContainer {
+    position: relative;
     display: none;
     height: 100%;
     width: 30px;
@@ -38,6 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index:1;
 
     @media screen and (max-width: 700px) {
         display: flex;
@@ -51,38 +53,34 @@
 }
 
 @media  screen and (max-width: 700px) {
-     .checkbox:checked.navPane{
-        border: 2px solid red;
-    }
-    
     .navPane  {
-            padding-top: 100px;
-            background: #fff;
-            height: 100vh;
-            max-width: 300px;
-            transform: translate(-150%);
-            display: flex;
+        padding-top: 3rem;
+        background: #fff;
+        height: 100vh;
+        max-width: 250px;
+        transform: translate(-100vw, -2.2%);
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+        ul{
             flex-direction: column;
-            margin-left: -40px;
-            padding-left: 50px;
-            transition: transform 0.5s ease-in-out;
-            box-shadow: 5px 0px 10px 0px #aaa;
-            border: 2px solid blue;
-
-            
+            li{
+                list-style: none;
+                margin-top: 1rem;
+            }
+        }
         }
 
-        .navPane.a{
-border: 2px solid red;  
-    transform: translateX(0);
-        }
+    .navPane.show{
+        transform: translate(-31vw,-2.2%);
+    }         
+}
 
-        // .navPane + {
-        //     z-index: 12;
-        //     
-        // }
-
-        
+@media screen and (max-width: 400px){
+    .navPane.show{
+        transform: translate(-16.1vw, -2.2%);
+    }
 }
 
 
