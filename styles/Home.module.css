@@ -1,14 +1,3 @@
-@media only screen and (max-width: 1200px){
-  .main{
-    flex-direction:column;
-  }
-}
-.main {
-  flex: 1;
-  display: flex;
-  border: 2px solid red;
-}
-
 .title a {
   color: #0070f3;
   text-decoration: none;

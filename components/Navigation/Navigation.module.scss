@@ -1,0 +1,86 @@
+@import "../../styles/variables.scss";
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    max-height: 5rem;
+    background-color: aqua;
+    padding: 1rem;
+    .navContent{
+        max-width: $max-page-width;
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+        padding: 0.5rem;
+    }
+
+}
+
+.navPane{
+    ul{
+        display: flex;
+        padding-left: 0;
+        li{
+            list-style: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+.burgerButtonContainer {
+    position: relative;
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index:1;
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+    }
+}
+
+.checkbox {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+@media  screen and (max-width: 700px) {
+    .navPane  {
+        padding-top: 3rem;
+        background: #fff;
+        height: 100vh;
+        max-width: 250px;
+        transform: translate(-100vw, -2.2%);
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+        ul{
+            flex-direction: column;
+            li{
+                list-style: none;
+                margin-top: 1rem;
+            }
+        }
+        }
+
+    .navPane.show{
+        transform: translate(-31vw,-2.2%);
+    }         
+}
+
+@media screen and (max-width: 400px){
+    .navPane.show{
+        transform: translate(-16.1vw, -2.2%);
+    }
+}
+
+
