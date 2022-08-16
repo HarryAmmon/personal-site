@@ -14,11 +14,13 @@
         justify-content: space-between;
         width:100%;
         padding: 0.5rem;
+    
     }
 
 }
 
 .navPane{
+    z-index: 1;
     ul{
         display: flex;
         padding-left: 0;
@@ -39,7 +41,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index:1;
+    z-index:2;
 
     @media screen and (max-width: 700px) {
         display: flex;
