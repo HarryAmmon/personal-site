@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -70,3 +72,22 @@
     flex-direction: column;
   }
 }
+
+.header{
+  display: flex;
+  @media screen and (max-width: $large-phone-breakpoint) {
+      flex-direction: column;
+    }
+  .introText {
+    @media screen and (max-width: $large-phone-breakpoint) {
+      order:1;
+    }
+    margin: 2rem 1rem;
+  }
+
+  .profilePic {
+  }
+}
+
+
+
