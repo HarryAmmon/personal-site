@@ -34,9 +34,6 @@
             padding-left: 1rem;
             padding-right: 1rem;
             font-size: 1.5rem; 
-            a:active{
-                border: 2px solid red;
-            }
         }
     }
 }
@@ -51,7 +48,8 @@
     justify-content: center;
     align-items: center;
     z-index:2;
-
+    border: none;
+    background: none;
     @media screen and (max-width: 700px) {
         display: flex;
     }

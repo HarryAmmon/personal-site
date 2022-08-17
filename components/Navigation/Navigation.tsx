@@ -1,4 +1,10 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Anchor, Burger, Cross } from "../Buttons";
 import styles from "./Navigation.module.scss";
 
@@ -45,10 +51,39 @@ export const NavigationBar = ({
   children,
 }: INavigationBarProps): JSX.Element => {
   const [checked, setChecked] = useState(false);
+  const clickRef = useRef();
+  useEffect(() => {
+    const closeDropdown = (event: any) => {
+      console.log(event);
+      if (event.path[0] !== clickRef.current) {
+        console.log("closing");
+        setChecked(false);
+      }
+      console.log("This event has fired");
+    };
+
+    document.body.addEventListener("click", closeDropdown);
+
+    return () => {
+      document.body.removeEventListener("click", closeDropdown);
+    };
+  }, []);
+
+  useEffect(() => console.log("re-render"), []);
+
   return (
     <nav className={styles.navBar}>
       <div className={styles.navBarContent}>
-        <BurgerButtonWithCross checked={checked} setChecked={setChecked} />
+        <button
+          className={styles.burgerButtonContainer}
+          type="button"
+          onClick={(e) => {
+            setChecked((prev) => !prev);
+          }}
+          ref={clickRef}
+        >
+          {checked ? <Cross /> : <Burger />}
+        </button>
         <NavigationPane checked={checked} />
         {children}
       </div>
@@ -56,26 +91,10 @@ export const NavigationBar = ({
   );
 };
 
-export const BurgerButtonWithCross = ({
-  checked,
-  setChecked,
-}: IBurgerButtonProps) => {
-  return <BurgerButton checked={checked} setChecked={setChecked} />;
-};
+const BurgerButton = React.forwardRef<HTMLButtonElement, IBurgerButtonProps>(
+  ({ checked, setChecked }, ref) => {
+    return <div></div>;
+  }
+);
 
-const BurgerButton = ({ checked, setChecked }: IBurgerButtonProps) => {
-  return (
-    <div>
-      <label htmlFor="burgerButton" className={styles.burgerButtonContainer}>
-        <input
-          type="checkbox"
-          id="burgerButton"
-          className={styles.checkbox}
-          checked={checked}
-          onChange={() => setChecked(!checked)}
-        />
-        {checked ? <Cross /> : <Burger />}
-      </label>
-    </div>
-  );
-};
+// { checked, setChecked }: IBurgerButtonProps
