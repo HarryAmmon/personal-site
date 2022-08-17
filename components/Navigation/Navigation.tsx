@@ -51,7 +51,7 @@ export const NavigationBar = ({
   children,
 }: INavigationBarProps): JSX.Element => {
   const [checked, setChecked] = useState(false);
-  const clickRef = useRef();
+  const clickRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const closeDropdown = (event: any) => {
       console.log(event);
