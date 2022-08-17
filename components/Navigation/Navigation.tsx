@@ -47,9 +47,11 @@ export const NavigationBar = ({
   const [checked, setChecked] = useState(false);
   return (
     <nav className={styles.navBar}>
-      <BurgerButtonWithCross checked={checked} setChecked={setChecked} />
-      <NavigationPane checked={checked} />
-      {children}
+      <div className={styles.navBarContent}>
+        <BurgerButtonWithCross checked={checked} setChecked={setChecked} />
+        <NavigationPane checked={checked} />
+        {children}
+      </div>
     </nav>
   );
 };
