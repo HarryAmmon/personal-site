@@ -62,10 +62,10 @@ export const NavigationBar = ({
       console.log("This event has fired");
     };
 
-    document.body.addEventListener("click", closeDropdown);
+    document.body.addEventListener("touch", closeDropdown);
 
     return () => {
-      document.body.removeEventListener("click", closeDropdown);
+      document.body.removeEventListener("touch", closeDropdown);
     };
   }, []);
 
