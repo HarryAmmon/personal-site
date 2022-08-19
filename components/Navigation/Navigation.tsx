@@ -55,7 +55,7 @@ export const NavigationBar = ({
   useEffect(() => {
     const closeDropdown = (event: any) => {
       console.log(event);
-      if (event.path[0] !== clickRef.current) {
+      if (event.composedPath()[0] !== clickRef.current) {
         console.log("closing");
         setChecked(false);
       }

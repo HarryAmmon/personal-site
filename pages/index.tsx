@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 export default function Home() {
   return (
-    <div onClick={() => void 0}>
+    <div>
       <header className={styles.header}>
         <div className={styles.introText}>
           <H1 className={styles.title}>Hello, I'm Harry</H1>
