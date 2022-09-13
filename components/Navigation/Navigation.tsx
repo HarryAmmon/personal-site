@@ -50,25 +50,28 @@ export const NavigationBar = ({
   const clickRef = useClickOutsideToClose(() => setChecked(false));
 
   return (
-    <SiteWidth className={styles.navBar}>
-      <PageWidth>
-        <nav id="nav">
-          <div className={styles.navBarContent}>
-            <button
-              className={styles.burgerButtonContainer}
-              type="button"
-              onClick={(e) => {
-                setChecked((prev) => !prev);
-              }}
-              ref={clickRef}
-            >
-              {checked ? <Cross /> : <Burger />}
-            </button>
-            <NavigationPane checked={checked} />
-            {children}
-          </div>
-        </nav>
-      </PageWidth>
-    </SiteWidth>
+    <>
+      {checked && <div className={styles.navBlur}></div>}
+      <SiteWidth className={styles.navBar}>
+        <PageWidth>
+          <nav id="nav">
+            <div className={styles.navBarContent}>
+              <button
+                className={styles.burgerButtonContainer}
+                type="button"
+                onClick={(e) => {
+                  setChecked((prev) => !prev);
+                }}
+                ref={clickRef}
+              >
+                {checked ? <Cross /> : <Burger />}
+              </button>
+              <NavigationPane checked={checked} />
+              {children}
+            </div>
+          </nav>
+        </PageWidth>
+      </SiteWidth>
+    </>
   );
 };

@@ -1,7 +1,6 @@
 @import "../../styles/variables.scss";
 
 .siteWidth{
-    border: 2px solid blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,16 +10,11 @@
 
 .pageWidth{
     max-width: $max-page-width;
-    border: 2px solid pink;
     width:100%;
 }
 
 .backGround{
     background-color: $background-primary;
-}
-
-.top{
-
 }
 
 .bottom{
