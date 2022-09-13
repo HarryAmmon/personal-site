@@ -14,20 +14,11 @@ export const Layout = ({ children }: ILayoutProps) => {
   return (
     <>
       <SiteHeader />
-      <NavigationBar>
-        <Anchor
-          href="/files/CV.pdf"
-          styleAs="button"
-          target="_blank"
-          className={styles.hireMe}
-        >
-          Hire me
-        </Anchor>
-      </NavigationBar>
-      <div className={styles.siteWidth}>
+      <NavigationBar/>
+      <div>
         <div className={styles.container}>{children}</div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,11 +1,7 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { useClickOutsideToClose } from "../../hooks";
 import { Anchor, Burger, Cross } from "../Buttons";
+import { PageWidth, SiteWidth } from "../Structure";
 import styles from "./Navigation.module.scss";
 
 interface IBurgerButtonProps {
@@ -44,57 +40,35 @@ export const NavigationPane = ({
 };
 
 export interface INavigationBarProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const NavigationBar = ({
   children,
 }: INavigationBarProps): JSX.Element => {
   const [checked, setChecked] = useState(false);
-  const clickRef = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    const closeDropdown = (event: any) => {
-      console.log(event);
-      if (event.composedPath()[0] !== clickRef.current) {
-        console.log("closing");
-        setChecked(false);
-      }
-      console.log("This event has fired");
-    };
-
-    document.body.addEventListener("click", closeDropdown);
-
-    return () => {
-      document.body.removeEventListener("click", closeDropdown);
-    };
-  }, []);
-
-  useEffect(() => console.log("re-render"), []);
+  const clickRef = useClickOutsideToClose(() => setChecked(false));
 
   return (
-    <nav className={styles.navBar}>
-      <div className={styles.navBarContent}>
-        <button
-          className={styles.burgerButtonContainer}
-          type="button"
-          onClick={(e) => {
-            setChecked((prev) => !prev);
-          }}
-          ref={clickRef}
-        >
-          {checked ? <Cross /> : <Burger />}
-        </button>
-        <NavigationPane checked={checked} />
-        {children}
-      </div>
-    </nav>
+    <SiteWidth className={styles.navBar}>
+      <PageWidth>
+        <nav id="nav">
+          <div className={styles.navBarContent}>
+            <button
+              className={styles.burgerButtonContainer}
+              type="button"
+              onClick={(e) => {
+                setChecked((prev) => !prev);
+              }}
+              ref={clickRef}
+            >
+              {checked ? <Cross /> : <Burger />}
+            </button>
+            <NavigationPane checked={checked} />
+            {children}
+          </div>
+        </nav>
+      </PageWidth>
+    </SiteWidth>
   );
 };
-
-const BurgerButton = React.forwardRef<HTMLButtonElement, IBurgerButtonProps>(
-  ({ checked, setChecked }, ref) => {
-    return <div></div>;
-  }
-);
-
-// { checked, setChecked }: IBurgerButtonProps

@@ -73,21 +73,22 @@
   }
 }
 
-.header{
-  display: flex;
-  @media screen and (max-width: $large-phone-breakpoint) {
-      flex-direction: column;
-    }
-  .introText {
-    @media screen and (max-width: $large-phone-breakpoint) {
-      order:1;
-    }
-    margin: 2rem 1rem;
-  }
+// .header{
+//   display: flex;
+//   background-color: $background-primary;
+//   @media screen and (max-width: $large-phone-breakpoint) {
+//       flex-direction: column;
+//     }
+//   .introText {
+//     @media screen and (max-width: $large-phone-breakpoint) {
+//       order:1;
+//     }
+//     margin: 2rem 1rem;
+//   }
 
-  .profilePic {
-  }
-}
+//   .profilePic {
+//   }
+// }
 
 
 
