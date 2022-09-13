@@ -1,31 +1,38 @@
 @import "../../styles/variables.scss";
-
+// The bar that spans the whole width of the site
 .navBar{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    background-color: $background-primary;
+    padding: 1rem;
+}
+// The part of the bar that is the max page width
+.navBarContent{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
-    max-height: 5rem;
-    background-color: aqua;
-    padding: 1rem;
-    .navContent{
-        max-width: $max-page-width;
-        display: flex;
-        justify-content: space-between;
-        width:100%;
-        padding: 0.5rem;
-    }
-
+    align-items: center;
+    width: 100%;
+    max-width: $max-page-width;
 }
 
+// the actual navigation items, not including logo
 .navPane{
+    background-color: $background-primary;
+    z-index: 1;
+    display: block;
     ul{
         display: flex;
         padding-left: 0;
         li{
             list-style: none;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 1rem 2rem;
+            font-size: 3rem; 
+            color: $off-white;
+        }
+        li:hover{
+            background-color: $action;
         }
     }
 }
@@ -39,8 +46,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index:1;
-
+    z-index:2;
+    border: none;
+    background: none;
     @media screen and (max-width: 700px) {
         display: flex;
     }
@@ -52,17 +60,18 @@
     left: -9999px;
 }
 
-@media  screen and (max-width: 700px) {
+@media  screen and (max-width: $large-phone-breakpoint) {
     .navPane  {
         padding-top: 3rem;
-        background: #fff;
-        height: 100vh;
-        max-width: 250px;
-        transform: translate(-100vw, -2.2%);
+        padding-left: 70px;
+        min-height: 100vh;
+        width: 60vw;
+        transform: translate(-100%, 270px);
         margin-left: -40px;
-        padding-left: 50px;
         transition: transform 0.3s ease-in-out;
-        box-shadow: 5px 0px 10px 0px #aaa;
+        top: -270px;
+        // box-shadow: 5px 0px 10px 0px #aaa;
+        position: fixed;
         ul{
             flex-direction: column;
             li{
@@ -70,17 +79,30 @@
                 margin-top: 1rem;
             }
         }
-        }
-
-    .navPane.show{
-        transform: translate(-31vw,-2.2%);
-    }         
+    }    
+    .navBlur{
+        position: fixed;
+        width:100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.8;
+        z-index:1;
+    }    
 }
 
-@media screen and (max-width: 400px){
-    .navPane.show{
-        transform: translate(-16.1vw, -2.2%);
+@media screen and (max-width: $large-phone-breakpoint) {
+    .navPane.show {
+        transform: translate(25px, 270px);
+    }
+    .burgerButtonContainer{
+        position: fixed;
     }
 }
 
-
+@media screen and (max-width: $small-phone-breakpoint){
+    .navPane{
+        width: 100vw;
+    }
+}

@@ -1,17 +1,31 @@
-import { Anchor } from "../components";
+import ProfilePic from "../public/images/me.jpeg";
 import { H1, P } from "../components/Typography";
-import styles from "../styles/Home.module.css";
-
+import styles from "../styles/Home.module.scss";
+import Image from "next/image";
+import { PageWidth, SiteWidth, Wave } from "../components/Structure";
 export default function Home() {
   return (
-    <>
-      <header>
-        <H1 className={styles.title}>Hello, I'm Harry</H1>
-        <P className={styles.description}>
-          I'm a software developer at The Pensions Regulator, currently building
-          tools for the web whilst promoting DevOps and Agile values.
-        </P>
-      </header>
+    <div>
+      <SiteWidth background>
+        <PageWidth backGround>
+          <header className={styles.header}>
+            <div className={styles.introText}>
+              <H1 className={styles.title}>Hello, I'm Harry </H1>
+              <P className={styles.description}>
+                I'm a software developer at The Pensions Regulator, currently
+                building tools for the web whilst promoting DevOps and Agile
+                values.
+              </P>
+            </div>
+            <Image
+              className={styles.profilePic}
+              src={ProfilePic}
+              alt="Picture of Harry Ammon wearing a blue suit jacket, white shirt and blue tie, standing infront of a tree"
+            />
+          </header>
+        </PageWidth>
+        <Wave position="top"/>
+      </SiteWidth>
 
       {/* Name, Nav bar to navigate to sections on the same page */}
 
@@ -28,6 +42,6 @@ export default function Home() {
           <P>Projects</P>
         </div>
       </main>
-    </>
+    </div>
   );
 }

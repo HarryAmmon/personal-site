@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.siteWidth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pageWidth{
+    max-width: $max-page-width;
+    width:100%;
+}
+
+.backGround{
+    background-color: $background-primary;
+}
+
+.bottom{
+    rotate: 50%;
+}
