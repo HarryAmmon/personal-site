@@ -48,7 +48,7 @@ interface ICrossProps{
 export const Cross = ({className}:ICrossProps) => {
   return (
     <svg
-      fill="#000000"
+      fill="#FEFEFE"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="50px"
@@ -62,7 +62,7 @@ export const Cross = ({className}:ICrossProps) => {
 
 export const Burger = () => (
   <svg
-    fill="#000000"
+    fill="#FEFEFE"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width="50px"
