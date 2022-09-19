@@ -4,11 +4,6 @@ import { Anchor, Burger, Cross } from "../Buttons";
 import { PageWidth, SiteWidth } from "../Structure";
 import styles from "./Navigation.module.scss";
 
-interface IBurgerButtonProps {
-  checked: boolean;
-  setChecked: Dispatch<SetStateAction<boolean>>;
-}
-
 interface INavigationPaneProps {
   checked: boolean;
 }
@@ -64,7 +59,7 @@ export const NavigationBar = ({
                 }}
                 ref={clickRef}
               >
-                {checked ? <Cross /> : <Burger />}
+                {checked ? <Cross className={styles.cross} /> : <Burger />}
               </button>
               <NavigationPane checked={checked} />
               {children}

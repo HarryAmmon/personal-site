@@ -30,6 +30,7 @@
             padding: 1rem 2rem;
             font-size: 3rem; 
             color: $off-white;
+            position: relative;
         }
         li:hover{
             background-color: $action;
@@ -40,7 +41,6 @@
 .burgerButtonContainer {
     position: relative;
     display: none;
-    height: 100%;
     width: 30px;
     cursor: pointer;
     flex-direction: column;
@@ -49,9 +49,6 @@
     z-index:2;
     border: none;
     background: none;
-    @media screen and (max-width: 700px) {
-        display: flex;
-    }
 }
 
 .checkbox {
@@ -61,6 +58,9 @@
 }
 
 @media  screen and (max-width: $large-phone-breakpoint) {
+    .navBar{
+        height: 6rem;
+    }
     .navPane  {
         padding-top: 3rem;
         padding-left: 70px;
@@ -70,7 +70,6 @@
         margin-left: -40px;
         transition: transform 0.3s ease-in-out;
         top: -270px;
-        // box-shadow: 5px 0px 10px 0px #aaa;
         position: fixed;
         ul{
             flex-direction: column;
@@ -90,14 +89,13 @@
         opacity: 0.8;
         z-index:1;
     }    
-}
 
-@media screen and (max-width: $large-phone-breakpoint) {
     .navPane.show {
         transform: translate(25px, 270px);
     }
     .burgerButtonContainer{
-        position: fixed;
+        // position: fixed;
+        display: flex;
     }
 }
 
@@ -105,4 +103,8 @@
     .navPane{
         width: 100vw;
     }
+}
+
+.cross{
+    position: fixed;
 }
