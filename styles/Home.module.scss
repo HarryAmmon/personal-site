@@ -73,12 +73,46 @@
   }
 }
 
+.profilePicWrapper{
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.profilePic{
+  border-radius: 50%;
+}
+
+.header{
+  display: flex;
+
+}
+
+@media screen and (max-width: $large-phone-breakpoint) {
+ .header {
+     flex-direction: column;
+     align-items: center;
+  }
+
+  .profilePicWrapper{
+    max-height: 200px;
+    max-width: 200px;
+  }
+  .title{
+    text-align: center;
+  }
+  .introText{
+    order:1;
+    text-align: center;
+  }
+  .profilePic{
+    order:-1;
+  }
+
+}
+
 // .header{
 //   display: flex;
 //   background-color: $background-primary;
-//   @media screen and (max-width: $large-phone-breakpoint) {
-//       flex-direction: column;
-//     }
 //   .introText {
 //     @media screen and (max-width: $large-phone-breakpoint) {
 //       order:1;
