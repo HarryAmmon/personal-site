@@ -14,9 +14,7 @@ export const Layout = ({ children }: ILayoutProps) => {
     <>
       <SiteHeader />
       <NavigationBar />
-
-      <div className={styles.container}>{children}</div>
-
+      <div>{children}</div>
       <Footer />
     </>
   );
