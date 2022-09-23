@@ -3,17 +3,17 @@ import styles from "./Structure.module.scss";
 interface ISiteWidthProps {
   children: React.ReactNode;
   className?: string;
-  background?: boolean;
+  hasBackground?: boolean;
 }
 
 export const SiteWidth = ({
   children,
   className,
-  background,
+  hasBackground,
 }: ISiteWidthProps) => (
   <div
     className={`${styles.siteWidth} ${className} ${
-      background && styles.backGround
+      hasBackground && styles.backGround
     }`}
   >
     {children}

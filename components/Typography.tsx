@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import styles from "./Typography.module.scss";
 
 type TypographyProps = {
+  id?: string;
   className?: string;
   children: ReactNode;
 };
@@ -21,5 +22,20 @@ export const H1: React.FC<TypographyProps> = ({
 }: TypographyProps) => {
   return (
     <h1 className={`${styles.h1} ${className ? className : ""}`}>{children}</h1>
+  );
+};
+
+export const H2: React.FC<TypographyProps> = ({
+  id,
+  className,
+  children,
+}: TypographyProps) => {
+  return (
+    <h2
+      id={id ? id : ""}
+      className={`${styles.h2} ${className ? className : ""}`}
+    >
+      {children}
+    </h2>
   );
 };

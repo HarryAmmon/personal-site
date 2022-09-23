@@ -1,14 +1,22 @@
 @import '/styles/variables.scss';
 .para{
     font-size: 2rem;
-    line-height: 1.3;
+    line-height: 1.55;
     color: $off-white;
 }
 
 .h1{
     margin: 0;
     line-height: 1.5;
-    font-size: 3.6rem;
+    font-size: 4rem;
     font-weight: 400;
+    color: $off-white;
+}
+
+.h2{
+    margin: 0;
+    line-height: 3;
+    font-size: 2.5rem;
+    font-weight: 350;
     color: $off-white;
 }

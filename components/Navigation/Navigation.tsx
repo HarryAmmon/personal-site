@@ -15,6 +15,11 @@ export const NavigationPane = ({
     <div className={`${styles.navPane} ${checked && styles.show}`}>
       <ul>
         <li>
+          <Anchor styleAs="a" href="#aboutme">
+            About Me
+          </Anchor>
+        </li>
+        <li>
           <Anchor styleAs="a" href="#projects">
             Projects
           </Anchor>
@@ -22,11 +27,6 @@ export const NavigationPane = ({
         <li>
           <Anchor styleAs="a" href="#career">
             Career
-          </Anchor>
-        </li>
-        <li>
-          <Anchor styleAs="a" href="#aboutme">
-            About Me
           </Anchor>
         </li>
       </ul>
