@@ -33,7 +33,7 @@ export default function Home() {
           </header>
           <main>
             <H2 id="aboutme">About Me</H2>
-            <P></P>
+            
             <H2 id="projects">Projects</H2>
             <P>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
