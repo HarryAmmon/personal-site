@@ -3,6 +3,15 @@ import { H1, H2, P } from "../components/Typography";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import { Link, PageWidth, SiteWidth, Wave } from "../components/Structure";
+import { Card } from "../components/Card";
+import {
+  CSharpIcon,
+  IconBar,
+  ReactIcon,
+  SassIcon,
+  TypeScriptIcon,
+  UmbracoIcon,
+} from "../components/Icons";
 export default function Home() {
   return (
     <div>
@@ -33,27 +42,25 @@ export default function Home() {
           </header>
           <main>
             <H2 id="aboutme">About Me</H2>
-            
+
             <H2 id="projects">Projects</H2>
-            <P>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              fringilla massa vitae venenatis pretium. Praesent faucibus orci
-              ipsum, a varius mi mattis at. Phasellus lacus ante, placerat vel
-              enim nec, pulvinar hendrerit nunc. Duis vestibulum massa ut tempor
-              facilisis. Phasellus luctus nibh et ligula suscipit porttitor.
-              Morbi blandit iaculis urna, in aliquam magna sagittis sit amet.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Orci varius natoque penatibus
-              et magnis dis parturient montes, nascetur ridiculus mus.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Vestibulum ut massa a nisl
-              maximus ullamcorper id vel nunc. Proin accumsan dictum velit a
-              dapibus. Praesent nec odio dolor. Class aptent taciti sociosqu ad
-              litora torquent per conubia nostra, per inceptos himenaeos.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Aliquam blandit consectetur
-              gravida.
-            </P>
+            <Card title="Kanban Board">
+              <IconBar>
+                <CSharpIcon />
+                <ReactIcon />
+                <UmbracoIcon />
+                <SassIcon />
+                <TypeScriptIcon />
+              </IconBar>
+            </Card>
+
+            <Card title="The Pensions Regulator User Research Site">
+              <IconBar>
+                <ReactIcon />
+                <SassIcon />
+              </IconBar>
+            </Card>
+
             <H2 id="career">Career</H2>
             <P>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras

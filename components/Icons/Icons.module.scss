@@ -1,0 +1,27 @@
+.IconPill{
+    display: inline-flex;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    padding: 0.25rem 1rem;
+}
+
+.Text{
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 450;
+    margin: 0.6rem;
+}
+
+.IconBar{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > * {
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        &:not(:last-child){
+            margin-right: 0.5rem;
+        }
+    }
+}

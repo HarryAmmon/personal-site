@@ -39,3 +39,15 @@ export const H2: React.FC<TypographyProps> = ({
     </h2>
   );
 };
+
+export const H3: React.FC<TypographyProps> = ({
+  id,
+  className,
+  children,
+}: TypographyProps) => {
+  return (
+    <h3 id={id} className={`${styles.h3} ${className ? className : ""}`}>
+      {children}
+    </h3>
+  );
+};
